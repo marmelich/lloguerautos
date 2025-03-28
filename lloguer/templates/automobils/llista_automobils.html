@@ -1,0 +1,35 @@
+<!-- templates/automobiles/lista_automobiles.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista d'Automòbils</title>
+</head>
+<body>
+    <h1>Tots els Automòbils</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Model</th>
+                <th>Matrícula</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for automobil in automobils %}
+                <tr>
+                    <td>{{ automobil.marca }}</td>
+                    <td>{{ automobil.model }}</td>
+                    <td>{{ automobil.matricula }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">No hi han automòbils.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
